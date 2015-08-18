@@ -10,8 +10,6 @@ color_dict_data = JSON.parse(color_dict_js[/\{.*\}/m])
 sunlight_map_data = JSON.parse(sunlight_map_js[/\{.*\}/m])
 
 data = color_dict_data.map do |key, val|
-  puts key
-  puts sunlight_map_data
   sun_red, sun_green, sun_blue = [1..2, 3..4, 5..6].map do |index_range|
     sunlight_map_data[key.downcase][index_range].to_i(16)
   end
